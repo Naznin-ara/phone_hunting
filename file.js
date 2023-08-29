@@ -38,9 +38,12 @@ const phoneDataLoad = (data, show) =>{
         <h2 class="card-title">${items.phone_name}</h2>
         <p>${items.slug}</p>
         <div class="card-actions">
+      
           <button class="btn btn-primary" onclick="detailsHandler('${items.slug}')">Show Details</button>
         </div>
-      </div>`;
+        
+      </div>
+      `;
       
       container.appendChild(div);
       showLoading(false);
@@ -78,6 +81,7 @@ const detailsHandler = async (id) =>{
       let detail = await res.json();
       let idDetail= detail.data;
       console.log(idDetail);
+    //   my_modal.showModal(idDetail);
      showmodal(idDetail);
     //   modal.classList.toggle('hidden')
  
@@ -109,3 +113,8 @@ const closemodal = () =>{
     modal.classList.add('hidden');
     console.log("click")
 }
+
+// const showDetailsModal =(data) =>{
+
+//     my_modal.showModal();
+// }

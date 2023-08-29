@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="bg-green-100 min-h-screen">
+<body class="bg-green-100 min-h-screen relative">
     <header>
         <h1 class="text-3xl font-bold">Phone Hunter</h1>
     </header>
     <section class="max-w-screen-2xl mx-auto mt-10 pb-40 min-h-full">
-        <div class="max-w-screen-xl mx-auto relative">
+        <div class="max-w-screen-xl mx-auto">
             <div class="bg-green-300 my-16 px-4 py-1 rounded-lg">
                 <input type="text" placeholder="Search here" class="input input-bordered input-success w-full max-w-xs" id="search"/>
               <button class="btn bg-green-600 text-white border-none" onclick="searchHandle()">Search</button>
@@ -20,13 +20,25 @@
             <div class="text-center mt-10 hidden" id="loadingSpinner">
                 <span class="loading loading-spinner loading-lg"></span>
             </div>
-            <div id="phone-container" class="grid grid-cols-3 gap-y-8 gap-x-1 justify-items-center">
-                
+            <div id="phone-container" class="grid grid-cols-3 gap-y-8 gap-x-1 justify-items-center relative">
+               
             </div>
-            <div class="bg-gray-50 w-[500px] h-[500px] rounded-lg shadow-lg absolute top-[100px] left-[500px] hidden pt-6" id="modal">
+            <div class="bg-gray-50 w-[500px] h-[500px] rounded-lg shadow-lg hidden pt-6 top-[50%] left-[50%] fixed -translate-x-[50%] -translate-y-[50%]" id="modal">
               
             </div>
-            <div class="text-center mt-10">
+            <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal.showModal()">open modal</button>  -->
+<!-- <dialog id="my_modal" class="modal">
+  <form method="dialog" class="modal-box">
+    <h3 class="font-bold text-lg">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+       if there is a button in form, it will close the modal 
+        <button class="btn">Close</button>
+    </div>
+  </form>
+</dialog> --> 
+            <div class="text-center mt-10"> 
                 <button class="btn btn-success hidden" id="showbtn" onclick="showAll()">Show All</button>
             </div>
             
